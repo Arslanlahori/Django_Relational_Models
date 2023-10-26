@@ -14,10 +14,11 @@ class Student(models.Model):
 class Subject(models.Model):
     SubjectName=models.CharField(max_length=70)
     SubDescription=models.TextField()
-    student=models.OneToOneField(Student,on_delete=models.CASCADE,primary_key=True)
+    # student=models.OneToOneField(Student,on_delete=models.CASCADE,primary_key=True)
+    student=models.OneToOneField(Student,on_delete=models.PROTECT,primary_key=True)
 
 class Studentclass(models.Model):
     ClassName=models.CharField(max_length=60)
     ClassDescription=models.TextField()
-    student=models.OneToOneField(Student,on_delete=models.CASCADE,primary_key=True)
-
+    # student=models.OneToOneField(Student,on_delete=models.CASCADE,primary_key=True)
+    student=models.OneToOneField(Student,on_delete=models.PROTECT,primary_key=True)
