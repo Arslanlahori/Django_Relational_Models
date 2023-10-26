@@ -14,11 +14,11 @@ class Student(models.Model):
 class Subject(models.Model):
     SubjectName=models.CharField(max_length=70)
     SubDescription=models.TextField()
-    student=models.ForeignKey(Student,on_delete=models.CASCADE)
-    #student=models.ForeignKey(Student,on_delete=models.PROTECT)
+    #student=models.ForeignKey(Student,on_delete=models.CASCADE)
+    student=models.ForeignKey(Student,on_delete=models.PROTECT)
 
 class Studentclass(models.Model):
     ClassName=models.CharField(max_length=60)
     ClassDescription=models.TextField()
-    student=models.ForeignKey(Student,on_delete=models.CASCADE)
-    #student=models.ForeignKey(Student,on_delete=models.PROTECT)
+    #student=models.ForeignKey(Student,on_delete=models.CASCADE)
+    student=models.ForeignKey(Student,on_delete=models.PROTECT)
